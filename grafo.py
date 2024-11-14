@@ -10,6 +10,10 @@ class Grafo:
             self.vertices[vertice] = []
 
     def adicionar_aresta(self, origem, destino, peso=1):
+        if origem not in self.vertices:
+            self.adicionar_vertice(origem)
+        if destino not in self.vertices:
+            self.adicionar_vertice(destino)
         if self.valorado:
             self.arestas[(origem, destino)] = peso
         else:
@@ -20,6 +24,13 @@ class Grafo:
         if not self.direcionado:
             self.vertices[destino].append(origem)
 
+    def adicionar_grafo_em_lote(self, vertices, arestas):
+        for vertice in vertices:
+            self.adicionar_vertice(vertice)
+        for origem, destino, *peso in arestas:
+            peso = peso[0] if peso and self.valorado else 1
+            self.adicionar_aresta(origem, destino, peso)
+
     def obter_ordem(self):
         return len(self.vertices)
 
@@ -28,7 +39,7 @@ class Grafo:
 
     def obter_adjacentes(self, vertice):
         return self.vertices.get(vertice, [])
-    
+
     def obter_grau(self, vertice):
         grau_saida = len(self.obter_adjacentes(vertice))
         grau_entrada = len([origem for origem, _ in self.arestas if _ == vertice])
