@@ -10,10 +10,20 @@ Clone o repositório, crie um ambiente virtual, ative-o, instale as dependência
 
 ```bash
     git clone https://github.com/felipesergiob/gerador-grafo-simples
-    cd projeto_grafo
 
     python3 -m venv myenv
+```
+MAC/LINUX:
+```bash
     source myenv/bin/activate
+```
+WINDOWS
+```bash
+    Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+     .\myenv\Scripts\Activate
+```
+
+```bash
     python3 -m pip install -r requirements.txt
     python3 main.py
 ```
