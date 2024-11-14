@@ -9,7 +9,7 @@ Para rodar o projeto, você precisa do Python 3 e das bibliotecas `matplotlib` e
 Clone o repositório, crie um ambiente virtual, ative-o, instale as dependências, e inicie o sistema com os comandos abaixo:
 
 ```bash
-    git clone <URL_DO_REPOSITORIO>
+    git clone https://github.com/felipesergiob/gerador-grafo-simples
     cd projeto_grafo
 
     python3 -m venv myenv
