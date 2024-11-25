@@ -4,7 +4,7 @@ Este projeto implementa um sistema para criar, manipular e visualizar grafos sim
 
 ## Instalação e Execução
 
-Para rodar o projeto, você precisa do Python 3 e das bibliotecas `matplotlib` e `networkx`.
+Para rodar o projeto, você precisa do Python 3.12.7 e das bibliotecas `matplotlib` e `networkx`.
 
 Clone o repositório, crie um ambiente virtual, ative-o, instale as dependências, e inicie o sistema com os comandos abaixo:
 
