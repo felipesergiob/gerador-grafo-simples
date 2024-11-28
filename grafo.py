@@ -14,12 +14,18 @@ class Grafo:
             self.adicionar_vertice(origem)
         if destino not in self.vertices:
             self.adicionar_vertice(destino)
+        
+        if not self.valorado:
+            peso = 5
+
         if self.valorado:
             self.arestas[(origem, destino)] = peso
         else:
-            self.arestas[(origem, destino)] = None
+            self.arestas[(origem, destino)] = peso
+        
         if not self.direcionado:
-            self.arestas[(destino, origem)] = peso if self.valorado else None
+            self.arestas[(destino, origem)] = peso
+
         self.vertices[origem].append(destino)
         if not self.direcionado:
             self.vertices[destino].append(origem)
@@ -28,7 +34,7 @@ class Grafo:
         for vertice in vertices:
             self.adicionar_vertice(vertice)
         for origem, destino, *peso in arestas:
-            peso = peso[0] if peso and self.valorado else 1
+            peso = peso[0] if peso and self.valorado else 5
             self.adicionar_aresta(origem, destino, peso)
 
     def obter_ordem(self):
@@ -55,7 +61,7 @@ class Grafo:
             if atual == destino:
                 break
             for vizinho in self.vertices[atual]:
-                peso = self.arestas[(atual, vizinho)] if self.valorado else 1
+                peso = self.arestas[(atual, vizinho)] if self.valorado else 5
                 if custo + peso < dist[vizinho]:
                     dist[vizinho] = custo + peso
                     heapq.heappush(pq, (dist[vizinho], vizinho))

@@ -32,7 +32,7 @@ def main():
             destino = input("Vértice de destino: ")
             peso = int(input("Peso da aresta: ")) if grafo.valorado else 1
             grafo.adicionar_aresta(origem, destino, peso)
-            print(f"Aresta de '{origem}' para '{destino}' com peso {peso} adicionada.")
+            print(f"Aresta de '{origem}' para '{destino}' adicionada.")
         
         elif escolha == "3":
             entrada = input("Digite os vértices e arestas no formato 'vértices; arestas': ")
