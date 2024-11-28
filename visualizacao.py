@@ -2,6 +2,8 @@ import networkx as nx
 import matplotlib.pyplot as plt
 
 def desenhar_grafo(grafo):
+    plt.clf()
+
     G = nx.DiGraph() if grafo.direcionado else nx.Graph()
 
     for vertice in grafo.vertices:
@@ -21,4 +23,5 @@ def desenhar_grafo(grafo):
         labels = nx.get_edge_attributes(G, "weight")
         nx.draw_networkx_edge_labels(G, pos, edge_labels=labels)
 
+    plt.draw()
     plt.show(block=False)
